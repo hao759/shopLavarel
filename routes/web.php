@@ -21,3 +21,4 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/dashboard', [AdminController::class, 'showDashboard']);
