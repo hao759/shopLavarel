@@ -353,6 +353,7 @@
 				
 				<div class="col-sm-9 padding-right">
 					
+					@yield('a')
 					@yield('content')
 					
 					<!--/category-tab-->
