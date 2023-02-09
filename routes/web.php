@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home', function () {
+    return view('pages/home');//hieenj heets
+});
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
