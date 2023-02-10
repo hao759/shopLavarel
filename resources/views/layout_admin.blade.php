@@ -363,6 +363,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <section id="main-content">
             <section class="wrapper">
                 <!-- //market-->
+                @yield('content_admin')
                 <div class="market-updates">
                     <div class="col-md-3 market-update-gd">
                         <div class="market-update-block clr-block-2">
@@ -390,58 +391,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="clearfix"> </div>
                         </div>
                     </div>
-                    <div class="col-md-3 market-update-gd">
-                        <div class="market-update-block clr-block-3">
-                            <div class="col-md-4 market-update-right">
-                                <i class="fa fa-usd"></i>
-                            </div>
-                            <div class="col-md-8 market-update-left">
-                                <h4>Sales</h4>
-                                <h3>1,500</h3>
-                                <p>Other hand, we denounce</p>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 market-update-gd">
-                        <div class="market-update-block clr-block-4">
-                            <div class="col-md-4 market-update-right">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </div>
-                            <div class="col-md-8 market-update-left">
-                                <h4>Orders</h4>
-                                <h3>1,500</h3>
-                                <p>Other hand, we denounce</p>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
                 </div>
-                <!-- //market-->
 
-                <div class="agil-info-calendar">
-                    <!-- calendar -->
-                    <div class="col-md-6 agile-calendar">
+                
 
-                    </div>
-                    <!-- //calendar -->
 
-                    <!-- tasks -->
-
-                    <!-- //tasks -->
-                    <div class="agileits-w3layouts-stats">
-                        <div class="col-md-4 stats-info widget">
-
-                        </div>
-                        <div class="col-md-8 stats-info stats-last widget-shadow">
-
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
             </section>
             <!-- footer -->
-            <h1>User name</h1>
             <div class="footer">
                 <div class="wthree-copyright">
                     <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
