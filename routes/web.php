@@ -31,13 +31,15 @@ Route::get('/logout', [AdminController::class, 'logout']);
 Route::get('/add_category_product', [CategoryProduct::class, 'addCategoryProduct']);
 Route::get('/all_category_product', [CategoryProduct::class, 'allCategoryProduct']);
 
+
 Route::post('/save_category_product', [CategoryProduct::class, 'saveCategoryProduct']);
 Route::get('/edit_category_product/{category_id}', [CategoryProduct::class, 'editCategoryProduct']);
 
-Route::post('/update_category_product/{category_id}', [CategoryProduct::class, 'updateCategoryProduct']);
-Route::get('/delete_category_product', [CategoryProduct::class, 'editCategoryProduct']);
 
-// edit_category_product
-Route::get('/active-category-product/{category_id}', [CategoryProduct::class, 'active_category_product']);
+Route::post('/update_category_product/{category_id}', [CategoryProduct::class, 'updateCategoryProduct']);
+Route::get('/delete_category_product/{category_id}', [CategoryProduct::class, 'deleteCategoryProduct']);
+
+
 // http://localhost:8080/shopLavarel/active-category-product/3
+Route::get('/active-category-product/{category_id}', [CategoryProduct::class, 'active_category_product']);
 Route::get('/unactive-category-product/{category_id}', [CategoryProduct::class, 'unactive_category_product']);

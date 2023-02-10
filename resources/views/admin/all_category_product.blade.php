@@ -64,7 +64,7 @@
             <td>
               <a href="{{URL::to('/edit_category_product/'.$item->category_id)}}" class="active" ui-toggle-class="">
                 <i class="fa fa-check text-success text-active"></i></a>
-              <a href="{{URL::to('/delete_category_product/'.$item->category_id)}}" class="active" ui-toggle-class="">
+              <a onclick="return confirm('Are you sure?')" href="{{URL::to('/delete_category_product/'.$item->category_id)}}" class="active" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>
