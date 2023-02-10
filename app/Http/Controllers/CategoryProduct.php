@@ -53,4 +53,20 @@ class CategoryProduct extends Controller
         DB::table('tbl_category_product')->where('category_id', $category_id)->update(['category_status' => 0]);
         return Redirect::to('all_category_product');
     }
+
+    public function editCategoryProduct($category_id)
+    {
+        $edit_category_product = DB::table('tbl_category_product')->where('category_id', $category_id)->get();
+        return view('admin.edit_category_product')->with('edit_category_product', $edit_category_product);
+    }
+
+    public function updateCategoryProduct(Request $request, $category_id)
+    {
+        $data = array();
+        $data['category_name'] = $request->category_product_name;
+        $data['category_desc'] = $request->category_product_description;
+
+        DB::table('tbl_category_product')->where('category_id', $category_id)->update($data);
+        return Redirect::to('all_category_product');
+    }
 }

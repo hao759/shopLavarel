@@ -21,3 +21,7 @@ php artisan migrate : tạo table từ migration
 
 
 ->where('category_id ', 
+
+asset
+
+$edit_category_product = DB::table('tbl_category_product')->where('category_id',$category_id)->get();           first -> nhiuf
