@@ -42,17 +42,27 @@
           </tr>
         </thead>
         <tbody>
+          @foreach($all_category_product as  $key=>$item)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
+            <!-- <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td> -->
+            <td><span class="text-ellipsis">{{$item->category_name}}</span></td>
+            <td><span class="text-ellipsis">{{$item->category_desc}}</span></td>
+            <td>
+              <?php
+                if($item->category_status)
+                echo "Ẩn";
+                else {
+                  echo "Hiện";
+                }
+              ?>
+            </td>
             <td>
               <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i
                   class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>
-
+@endforeach
         </tbody>
       </table>
     </div>
