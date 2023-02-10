@@ -24,6 +24,7 @@ return new class extends Migration
     }
 
     /**
+     * php artisan make:migration create_tbl_admin_table --create=tbl_admin
      * Reverse the migrations.
      *
      * @return void

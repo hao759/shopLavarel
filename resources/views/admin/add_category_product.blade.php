@@ -41,7 +41,7 @@
                                         <input type="checkbox"> Check me out
                                     </label>
                                 </div> -->
-                                <button type="submit" name="add_categoty_product" class="btn btn-info">Thêm</button>
+                                <button type="submit"  class="btn btn-info">Thêm sản phẩm</button>
                                 </form>
                             </div>
 

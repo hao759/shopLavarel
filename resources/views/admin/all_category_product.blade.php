@@ -21,7 +21,7 @@
         <div class="input-group">
           <input type="text" class="input-sm form-control" placeholder="Search">
           <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                <button class="btn btn-sm btn-default" type="button">Go!</button>
           </span>
         </div>
       </div>
@@ -31,8 +31,8 @@
         <thead>
           <tr>
             <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
+                 <label class="i-checks m-b-none">
+                    <input type="checkbox"><i></i>
               </label>
             </th>
             <th>Tên danh mục</th>
@@ -45,17 +45,17 @@
           @foreach($all_category_product as  $key=>$item)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <!-- <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td> -->
+
             <td><span class="text-ellipsis">{{$item->category_name}}</span></td>
             <td><span class="text-ellipsis">{{$item->category_desc}}</span></td>
             <td>
               <?php
-                if($item->category_status)
-                echo "Ẩn";
-                else {
-                  echo "Hiện";
-                }
-              ?>
+          if ($item->category_status) {
+              echo "Ẩn";
+        } else {
+            echo "Hiện";
+        }
+        ?>
             </td>
             <td>
               <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i
@@ -78,7 +78,7 @@
             <li><a href="">1</a></li>
             <li><a href="">2</a></li>
             <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
+            <!-- <li><a href="">4</a></li> -->
             <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
           </ul>
         </div>
