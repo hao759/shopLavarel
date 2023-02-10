@@ -4,10 +4,14 @@ php artisan make:controller Admin //tên thôi
 
 
 php artisan make:migration create_tbl_admin_table --create=tbl_admin
+php artisan make:migration create_tbl_category_product --create=tbl_category_product
 
 
 php artisan migrate : tạo table từ migration 
-{{csrf_field()}}
+
+{{csrf_field()}}  bắt buộc
+
+
 
 <form action="{{URL::to('/admin_dashboard')}}" method="post">
 

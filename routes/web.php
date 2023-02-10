@@ -30,3 +30,4 @@ Route::get('/logout', [AdminController::class, 'logout']);
 //Category 
 Route::get('/add_category_product', [CategoryProduct::class, 'addCategoryProduct']);
 Route::get('/all_category_product', [CategoryProduct::class, 'allCategoryProduct']);
+Route::post('/save_category_product', [CategoryProduct::class, 'saveCategoryProduct']);
