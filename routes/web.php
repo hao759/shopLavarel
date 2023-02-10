@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -39,7 +40,21 @@ Route::get('/edit_category_product/{category_id}', [CategoryProduct::class, 'edi
 Route::post('/update_category_product/{category_id}', [CategoryProduct::class, 'updateCategoryProduct']);
 Route::get('/delete_category_product/{category_id}', [CategoryProduct::class, 'deleteCategoryProduct']);
 
-
 // http://localhost:8080/shopLavarel/active-category-product/3
 Route::get('/active-category-product/{category_id}', [CategoryProduct::class, 'active_category_product']);
 Route::get('/unactive-category-product/{category_id}', [CategoryProduct::class, 'unactive_category_product']);
+
+
+
+//Brand Product 
+Route::get('/add_brand_product', [BrandProduct::class, 'addBrandProduct']);
+Route::get('/all_brand_product', [BrandProduct::class, 'allCategoryProduct']);
+
+Route::post('/save_brand_product', [BrandProduct::class, 'saveBrandProduct']);
+Route::get('/edit_category_product/{brand_id}', [BrandProduct::class, 'editCategoryProduct']);
+
+Route::post('/update_category_product/{brand_id}', [BrandProduct::class, 'updateCategoryProduct']);
+Route::get('/delete_category_product/{brand_id}', [BrandProduct::class, 'deleteCategoryProduct']);
+
+Route::get('/active-category-product/{brand_id}', [BrandProduct::class, 'active_category_product']);
+Route::get('/unactive-category-product/{brand_id}', [BrandProduct::class, 'unactive_category_product']);
