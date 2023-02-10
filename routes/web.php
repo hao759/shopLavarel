@@ -23,3 +23,4 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);
+Route::get('/logout', [AdminController::class, 'logout']);
