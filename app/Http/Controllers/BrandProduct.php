@@ -55,22 +55,22 @@ class BrandProduct extends Controller
 
     public function editbrandProduct($brand_id)
     {
-        $edit_brand_product = DB::table('tbl_brand_product')->where('brand_id', $brand_id)->get();
+        $edit_brand_product = DB::table('tbl_brand')->where('brand_id', $brand_id)->get();
         return view('admin.edit_brand_product')->with('edit_brand_product', $edit_brand_product);
     }
 
-    public function updatebrandProduct(Request $request, $brand_id)
+    public function updateBrandProduct(Request $request, $brand_id)
     {
         $data = array();
         $data['brand_name'] = $request->brand_product_name;
         $data['brand_desc'] = $request->brand_product_description;
 
-        DB::table('tbl_brand_product')->where('brand_id', $brand_id)->update($data);
+        DB::table('tbl_brand')->where('brand_id', $brand_id)->update($data);
         return Redirect::to('all_brand_product');
     }
-    public function deletebrandProduct($brand_id)
+    public function deleteBrandProduct($brand_id)
     {
-        DB::table('tbl_brand_product')->where('brand_id', $brand_id)->delete();
+        DB::table('tbl_brand')->where('brand_id', $brand_id)->delete();
         return Redirect::to('all_brand_product');
     }
 }
