@@ -7,12 +7,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 
 <head>
-    <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Admin Panel Category Bootstrap  | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
 </script>
     <!-- bootstrap-css -->
     <link rel="stylesheet" href="{{('public/backend/css/bootstrap.min.css')}}">
@@ -26,15 +26,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{('public/backend/css/font.css')}}" type="text/css" />
-    <link href="{{assert('public/backend/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{assert('public/backend/css/morris.css')}}" type="text/css" />
+    <link href="{{asset('public/backend/css/font-awesome.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('public/backend/css/morris.css')}}" type="text/css" />
     <!-- calendar -->
-    <link rel="stylesheet" href="{{('public/backend/css/monthly.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/css/monthly.css')}}">
     <!-- //calendar -->
     <!-- //font-awesome icons -->
-    <script src="{{('public/backend/js/jquery2.0.3.min.js')}}"></script>
-    <script src="{{('public/backend/js/raphael-min.js')}}"></script>
-    <script src="{{('public/backend/js/morris.js')}}"></script>
+    <script src="{{asset('public/backend/js/jquery2.0.3.min.js')}}"></script>
+    <script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
+    <script src="{{asset('public/backend/js/morris.js')}}"></script>
 </head>
 
 <body>
@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="index.html" class="logo">
+                <a href="{{URL::to('/dashboard')}}" class="logo">
                     VISITORS
                 </a>
                 <div class="sidebar-toggle-box">
@@ -245,11 +245,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="{{('public/backend/images/2.png')}}">
                             <span class="username">
-<?php
-    $admin_name=Session::get('admin_name');
-    if ($admin_name) 
-        echo $admin_name;
-?>
+                            <?php
+                    $admin_name = Session::get('admin_name');
+                    if ($admin_name) {
+                        echo $admin_name;
+                    }
+
+                    ?>
 
                             </span>
                             <b class="caret"></b>
@@ -263,10 +265,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown end -->
 
                 </ul>
-                
+
                 <!--search & user info end-->
             </div>
-            
+
         </header>
         <!--header end-->
         <!--sidebar start-->
@@ -276,36 +278,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li>
-                            <a class="active" href="index.html">
+                            <a class="active" href="{{URL::to('/dashboard')}}">
                                 <i class="fa fa-dashboard"></i>
-                                <span>Dashboard</span>
+                                <span>Tổng quan</span>
                             </a>
                         </li>
 
                          <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>UI Elements</span>
-                            </a>
-                            
-                        </li>
-                        <!--<li>
-                            <a href="fontawesome.html">
-                                <i class="fa fa-bullhorn"></i>
-                                <span>Font awesome </span>
-                            </a>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="javascript:;">
-                                <i class="fa fa-th"></i>
-                                <span>Data Tables</span>
+                                <span>Danh mục sản phẩm</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="basic_table.html">Basic Table</a></li>
-                                <li><a href="responsive_table.html">Responsive Table</a></li>
+                                <li><a href="{{URL::to('/add_category_product')}}">Thêm danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('/all_category_product')}}">Liệt kê danh mục</a></li>
                             </ul>
+                            </li>
                         </li>
-                        <li class="sub-menu">
+                        <!-- <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-tasks"></i>
                                 <span>Form Components</span>
@@ -315,26 +305,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="form_validation.html">Form Validation</a></li>
                                 <li><a href="dropzone.html">Dropzone</a></li>
                             </ul>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="javascript:;">
-                                <i class="fa fa-envelope"></i>
-                                <span>Mail </span>
-                            </a>
-                            <ul class="sub">
-                                <li><a href="mail.html">Inbox</a></li>
-                                <li><a href="mail_compose.html">Compose Mail</a></li>
-                            </ul>
-                        </li>
-
-
-                       
-                        <li>
-                            <a href="login.html">
-                                <i class="fa fa-user"></i>
-                                <span>Login Page</span>
-                            </a>
-                        </li> -->
+                        </li>-->
                     </ul>
                 </div>
                 <!-- sidebar menu end-->
@@ -375,7 +346,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
 
-                
+
 
 
             </section>
@@ -389,15 +360,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </section>
         <!--main content end-->
     </section>
-    <script src="{{assert('public/backend/js/bootstrap.js')}}"></script>
-    <script src="{{assert('public/backend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-    <script src="{{assert('public/backend/js/scripts.js')}}"></script>
-    <script src="{{assert('public/backend/js/jquery.slimscroll.js')}}"></script>
-    <script src="{{assert('public/backend/js/jquery.nicescroll.js')}}"></script>
+    <script src="{{asset('public/backend/js/bootstrap.js')}}"></script>
+    <script src="{{asset('public/backend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
+    <script src="{{asset('public/backend/js/scripts.js')}}"></script>
+    <script src="{{asset('public/backend/js/jquery.slimscroll.js')}}"></script>
+    <script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
     <script src="{{('public/backend/js/jquery.scrollTo.js')}}"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     <!-- morris JavaScript -->
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             //BOX BUTTON SHOW AND CLOSE
             jQuery('.small-graph-box').hover(function () {
@@ -451,38 +423,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
         });
-    </script>
+    </script> -->
     <!-- calendar -->
     <script type="text/javascript" src="{{('public/backend/js/monthly.js')}}"></script>
-    <script type="text/javascript">
-        $(window).load(function () {
-
-            $('#mycalendar').monthly({
-                mode: 'event',
-
-            });
-
-            $('#mycalendar2').monthly({
-                mode: 'picker',
-                target: '#mytarget',
-                setWidth: '250px',
-                startHidden: true,
-                showTrigger: '#mytarget',
-                stylePast: true,
-                disablePast: true
-            });
-
-            switch (window.location.protocol) {
-                case 'http:':
-                case 'https:':
-                    // running on a server, should be good.
-                    break;
-                case 'file:':
-                    alert('Just a heads-up, events will not work when run locally.');
-            }
-
-        });
-    </script>
+    
+    
 </body>
 
 </html>

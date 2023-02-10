@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,8 @@ Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);
 Route::get('/logout', [AdminController::class, 'logout']);
+
+
+//Category 
+Route::get('/add_category_product', [CategoryProduct::class, 'addCategoryProduct']);
+Route::get('/all_category_product', [CategoryProduct::class, 'allCategoryProduct']);

@@ -1,6 +1,6 @@
 composer create-project --prefer-dist laravel/laravel shopLavarel
 
-php artisan make:controller AdminController
+php artisan make:controller Admin //tên thôi
 
 
 php artisan make:migration create_tbl_admin_table --create=tbl_admin
@@ -10,3 +10,7 @@ php artisan migrate : tạo table từ migration
 {{csrf_field()}}
 
 <form action="{{URL::to('/admin_dashboard')}}" method="post">
+
+
+
+<script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
