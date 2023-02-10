@@ -31,3 +31,7 @@ Route::get('/logout', [AdminController::class, 'logout']);
 Route::get('/add_category_product', [CategoryProduct::class, 'addCategoryProduct']);
 Route::get('/all_category_product', [CategoryProduct::class, 'allCategoryProduct']);
 Route::post('/save_category_product', [CategoryProduct::class, 'saveCategoryProduct']);
+// /active-category-product
+Route::get('/active-category-product/{category_id}', [CategoryProduct::class, 'active_category_product']);
+// http://localhost:8080/shopLavarel/active-category-product/3
+Route::get('/unactive-category-product/{category_id}', [CategoryProduct::class, 'unactive_category_product']);

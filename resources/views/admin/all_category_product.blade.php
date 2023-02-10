@@ -45,17 +45,21 @@
           @foreach($all_category_product as  $key=>$item)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-
             <td><span class="text-ellipsis">{{$item->category_name}}</span></td>
             <td><span class="text-ellipsis">{{$item->category_desc}}</span></td>
             <td>
               <?php
           if ($item->category_status) {
-              echo "Ẩn";
+            ?>
+            <a href="{{URL::to('/unactive-category-product/'.$item->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-up"></span></a>
+            <?php
         } else {
-            echo "Hiện";
+          ?>
+        <a href="{{URL::to('/active-category-product/'.$item->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
+          <?php
         }
         ?>
+        
             </td>
             <td>
               <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i
