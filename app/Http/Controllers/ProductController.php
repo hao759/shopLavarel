@@ -38,10 +38,25 @@ class ProductController extends Controller
         $data['product_content'] = $request->product_content;
         $data['product_price'] = $request->product_price;
         $data['product_status'] = $request->product_status;
+        $data['product_name'] = $request->product_name;
+        
 
+        $product_image=$request->file('product_image');
+        $data['product_image'] ='';
+
+        if($product_image){
+            $get_name_image=$product_image->getClientOriginalName();
+            $name_image=current(explode('.',$get_name_image));
+            // $extesion=end(explode('.',$get_name_image));
+            $extesion=$product_image->getClientOriginalExtension();
+            $new_image=$name_image.rand(0,99).'.'.$extesion;
+            $product_image->move('public/upload/product',$new_image);
+            $data['product_image'] =  $new_image;
+            Session::put('messadd', 'Thêm sản phẩm thành công'); 
+        }
         DB::table('tbl_product')->insert($data);
-        Session::put('messadd', 'Thêm thành công');
         return Redirect::to('add_product');
+        
     }
     // active_product
     public function active_product($category_id)

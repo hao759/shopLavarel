@@ -28,3 +28,6 @@ $edit_category_product = DB::table('tbl_category_product')->where('category_id',
 
 
 onclick="return confirm('Are you sure?') voo a tag
+
+
+<form role="form" action="{{URL::to('/save_product')}}" method="post" enctype="multipart/form-data">

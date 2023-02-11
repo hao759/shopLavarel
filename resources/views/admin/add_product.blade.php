@@ -15,7 +15,7 @@
                             echo '<span class="text-danger fw-bolder">'.$mess.'</span>';
                             ?>
                             <div class="position-center">
-                                <form role="form" action="{{URL::to('/save_product')}}" method="post">
+                                <form role="form" action="{{URL::to('/save_product')}}" method="post" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên sản phẩm</label>
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Ảnh sản phẩm</label>
-                                    <input type="file" class="form-control" name="product_image" id="exampleInputEmail1" placeholder="Tên danh mục">
+                                    <input type="file" class="form-control" name="product_image" id="exampleInputEmail1"  placeholder="anhr">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô tả sản phẩm</label>
@@ -47,8 +47,14 @@
                                 <div class="form-group" >
                                     <select class="form-control input-sm m-bot15" name="product_brand">
                                         @foreach($brand_list as $key=>$item)
-                                        <option value={{$item->brand_name}}>{{$item->brand_name}}</option>
+                                        <option value={{$item->brand_id}}>{{$item->brand_name}}</option>
                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group" >
+                                    <select class="form-control input-sm m-bot15" name="product_status">
+                                        <option value=0>Ẩn</option>
+                                        <option value=1>Hiển thị</option>
                                     </select>
                                 </div>
                                 <button type="submit"  class="btn btn-info">Thêm sản phẩm</button>
