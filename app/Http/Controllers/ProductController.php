@@ -20,9 +20,9 @@ class ProductController extends Controller
         $brand_list=DB::table('tbl_brand')->get();
         return view('admin.add_product')->with('category_list',$category_list)->with('brand_list',$brand_list);
     }
-    public function allCategoryProduct()
+    public function allProduct()
     {
-        $all_product = DB::table('tbl_product')->get();
+        $all_product = DB::table('tbl_product')->join('tbl_category_product', 'tbl_product.category_id', '=', 'tbl_category_product.category_id')->join('tbl_brand', 'tbl_brand.brand_id', '=', 'tbl_product.brand_id')->get();
         return view('admin.all_product')->with('all_product', $all_product);
 
         // $manager_product=view('admin.all_product')->with('all_product',$all_product);
@@ -40,7 +40,6 @@ class ProductController extends Controller
         $data['product_status'] = $request->product_status;
         $data['product_name'] = $request->product_name;
         
-
         $product_image=$request->file('product_image');
         $data['product_image'] ='';
 
@@ -59,16 +58,16 @@ class ProductController extends Controller
         
     }
     // active_product
-    public function active_product($category_id)
+    public function active_product($product_id)
     {
 
-        DB::table('tbl_product')->where('category_id', $category_id)->update(['category_status' => 1]);
+        DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status' => 1]);
         return Redirect::to('all_product');
     }
-    public function unactive_product($category_id)
+    public function unactive_product($product_id)
     {
 
-        DB::table('tbl_product')->where('category_id', $category_id)->update(['category_status' => 0]);
+        DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status' => 0]);
         return Redirect::to('all_product');
     }
 
@@ -87,9 +86,9 @@ class ProductController extends Controller
         DB::table('tbl_product')->where('category_id', $category_id)->update($data);
         return Redirect::to('all_product');
     }
-    public function deleteCategoryProduct($category_id)
+    public function deleteProduct($product_id)
     {
-        DB::table('tbl_product')->where('category_id', $category_id)->delete();
+        DB::table('tbl_product')->where('product_id', $product_id)->delete();
         return Redirect::to('all_product');
     }
 }
