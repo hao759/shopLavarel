@@ -24,6 +24,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 Route::get('/showByDanhMuc/{category_id}', [HomeController::class, 'showByDanhMuc']);
+Route::get('/chi_tiet_san_pham/{product_id}', [HomeController::class, 'showChiTietSanPham']);
+
 
 
 

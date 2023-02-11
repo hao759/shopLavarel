@@ -6,7 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet"> -->
+	<link href="{{URL::to('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/price-range.css')}}" rel="stylesheet">
@@ -57,7 +58,8 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="{{('public//images/one.png')}}" alt="" /></a>
+							<a href="index.html">
+								<img src="{{('public//images/one.png')}}" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -162,7 +164,7 @@
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
 									<img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
 								</div>
 							</div>
@@ -174,8 +176,8 @@
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{('public/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
-									<img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+									<img src="{{asset('public/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
 								</div>
 							</div>
 							
@@ -187,7 +189,7 @@
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{('public/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('public/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
 									<img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
 								</div>
 							</div>
@@ -354,6 +356,8 @@
 					<div class="col-sm-3">
 						<div class="address">
 							<img src="{{('public/frontend/images/map.png')}}" alt="" />
+							<!-- <img src="{{URL::to('public/frontend/images/map.png')}}" alt="" />
+							<img src="public/frontend/images/map.png" alt="" /> -->
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 						</div>
 					</div>

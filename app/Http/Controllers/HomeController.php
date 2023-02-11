@@ -31,4 +31,14 @@ class HomeController extends Controller
         $category_name=DB::table('tbl_category_product')->where('category_id',$category_id)->limit(1)->get();
         return view('category.show_category')->with('all_product',$all_product)->with('category_list',$category_list)->with('brand_list',$brand_list)->with('category_name',$category_name);
     }
+    
+
+    //End Page Admin
+    public function showChiTietSanPham($product_id)
+    {
+        $category_list=DB::table('tbl_category_product')->where('category_status',1)-> get();
+        $brand_list=DB::table('tbl_brand')->where('brand_status',1)->get();
+        
+        return view('sanpham.show_detail')->with('category_list',$category_list)->with('brand_list',$brand_list);
+    }
 }

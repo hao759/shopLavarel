@@ -3,6 +3,7 @@
 <div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Sản phẩm </h2>
 						@foreach($all_product as $key =>$item)
+						<a href="{{URL::to('/chi_tiet_san_pham/'.$item->product_id)}}">
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -12,13 +13,13 @@
 											<p>{{$item->product_name}}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
-										<div class="product-overlay">
+										<!-- <div class="product-overlay">
 											<div class="overlay-content">
 											<h2>${{number_format($item->product_price)}}</h2>
 												<p>{{$item->product_name}}</p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
-										</div>
+										</div> -->
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -28,6 +29,7 @@
 								</div>
 							</div>
 						</div>
+</a>
 						@endforeach 
 					</div><!--features_items-->
 
