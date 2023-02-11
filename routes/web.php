@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,3 +59,19 @@ Route::get('/delete_brand_product/{brand_id}', [BrandProduct::class, 'deleteBran
 
 Route::get('/active-brand-product/{brand_id}', [BrandProduct::class, 'active_brand_product']);
 Route::get('/unactive-brand-product/{brand_id}', [BrandProduct::class, 'unactive_brand_product']);
+
+
+
+
+// Product 
+Route::get('/add_product', [ProductController::class, 'addProduct']);
+Route::get('/all_brand_product', [ProductController::class, 'allBrandProduct']);
+
+Route::post('/save_product', [ProductController::class, 'saveProduct']);
+Route::get('/edit_brand_product/{brand_id}', [ProductController::class, 'editBrandProduct']);
+
+Route::post('/update_brand_product/{brand_id}', [ProductController::class, 'updateBrandProduct']);
+Route::get('/delete_brand_product/{brand_id}', [ProductController::class, 'deleteBrandProduct']);
+
+Route::get('/active-brand-product/{brand_id}', [ProductController::class, 'active_brand_product']);
+Route::get('/unactive-brand-product/{brand_id}', [ProductController::class, 'unactive_brand_product']);
