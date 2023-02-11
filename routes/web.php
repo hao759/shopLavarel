@@ -23,6 +23,15 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
 
 
+Route::get('/showByDanhMuc/{category_id}', [HomeController::class, 'showByDanhMuc']);
+
+
+
+
+
+
+
+
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);

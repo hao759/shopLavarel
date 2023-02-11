@@ -22,10 +22,13 @@ class HomeController extends Controller
         return view('pages.home')->with('category_list',$category_list)->with('brand_list',$brand_list)->with('all_product',$all_product);
     }
 
-    // public function show($id)
-    // {
-    //     return view('user.profile', [
-    //         'user' => User::findOrFail($id)
-    //     ]);
-    // }
+    public function showByDanhMuc($category_id)
+    {
+        
+        $category_list=DB::table('tbl_category_product')->where('category_status',1)-> get();
+        $brand_list=DB::table('tbl_brand')->where('brand_status',1)->get();
+        $all_product=DB::table('tbl_product')->where('category_id',$category_id)->get();
+        $category_name=DB::table('tbl_category_product')->where('category_id',$category_id)->limit(1)->get();
+        return view('category.show_category')->with('all_product',$all_product)->with('category_list',$category_list)->with('brand_list',$brand_list)->with('category_name',$category_name);
+    }
 }

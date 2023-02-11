@@ -13,10 +13,6 @@ php artisan migrate : tạo table từ migration
 
 
 
-<form action="{{URL::to('/admin_dashboard')}}" method="post">
-
-
-
 <script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
 
 
@@ -30,6 +26,6 @@ $edit_category_product = DB::table('tbl_category_product')->where('category_id',
 onclick="return confirm('Are you sure?') voo a tag
 
 
-<form role="form" action="{{URL::to('/save_product')}}" method="post" enctype="multipart/form-data">
+<form role="form" action="{{URL::to('/save_product',$....)}}" method="post" enctype="multipart/form-data">
 
 <img src="public/upload/product/{{$item->product_image}}" alt="" width="300px" height="300px" /> //đi từ file public
