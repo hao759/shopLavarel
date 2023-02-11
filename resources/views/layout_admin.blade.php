@@ -103,20 +103,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <div class="task-info clearfix">
-                                        <div class="desc pull-left">
-                                            <h5>Target Sell</h5>
-                                            <p>33% , Deadline 12 June’13</p>
-                                        </div>
-                                        <span class="notification-pie-chart pull-right" data-percent="90">
-                                            <span class="percent"></span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-
                             <li class="external">
                                 <a href="#">See All Tasks</a>
                             </li>
@@ -159,35 +145,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar"
-                                            src="{{('public/backend/images/3.png')}}"></span>
-                                    <span class="subject">
-                                        <span class="from">Tasi sam</span>
-                                        <span class="time">2 days ago</span>
-                                    </span>
-                                    <span class="message">
-                                        This is an example msg.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar"
-                                            src="{{('public/backend/images/2.png')}}"></span>
-                                    <span class="subject">
-                                        <span class="from">Mr. Perfect</span>
-                                        <span class="time">2 hour ago</span>
-                                    </span>
-                                    <span class="message">
-                                        Hi there, its a test
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">See all messages</a>
-                            </li>
                         </ul>
                     </li>
                     <!-- inbox dropdown end -->
@@ -218,15 +175,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="alert alert-success clearfix">
-                                    <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                                    <div class="noti-info">
-                                        <a href="#"> Server #3 overloaded.</a>
-                                    </div>
-                                </div>
-                            </li>
-
                         </ul>
                     </li>
                     <!-- notification dropdown end -->
@@ -283,7 +231,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Tổng quan</span>
                             </a>
                         </li>
-
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-book"></i>
+                                <span>Sản phẩm</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="{{URL::to('/add_product')}}">Thêm Sản phẩm</a></li>
+                                <li><a href="{{URL::to('/all_product')}}">Liệt kê sản phẩm</a></li>
+                            </ul>
+                            </li>
+                        </li>
                          <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
@@ -306,17 +264,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                             </li>
                         </li>
-                        <!-- <li class="sub-menu">
-                            <a href="javascript:;">
-                                <i class="fa fa-tasks"></i>
-                                <span>Form Components</span>
-                            </a>
-                            <ul class="sub">
-                                <li><a href="form_component.html">Form Elements</a></li>
-                                <li><a href="form_validation.html">Form Validation</a></li>
-                                <li><a href="dropzone.html">Dropzone</a></li>
-                            </ul>
-                        </li>-->
                     </ul>
                 </div>
                 <!-- sidebar menu end-->
@@ -356,10 +303,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </div>
                 </div>
-
-
-
-
             </section>
             <!-- footer -->
             <div class="footer">

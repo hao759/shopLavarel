@@ -43,6 +43,7 @@
         </thead>
         <tbody>
           @foreach($all_brand_product as  $key=>$item)
+          <!-- <form role="form" action="{{URL::to('/save_brand_product')}}" method="post"> -->
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td><span class="text-ellipsis">{{$item->brand_name}}</span></td>
@@ -59,7 +60,6 @@
           <?php
         }
         ?>
-        
             </td>
             <td>
               <a href="{{URL::to('/edit_brand_product/'.$item->brand_id)}}" class="active" ui-toggle-class="">

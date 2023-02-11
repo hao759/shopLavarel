@@ -39,7 +39,6 @@ class BrandProduct extends Controller
         Session::put('messadd', 'Thêm thành công');
         return Redirect::to('add_brand_product');
     }
-    // active_brand_product
     public function active_brand_product($brand_id)
     {
 
