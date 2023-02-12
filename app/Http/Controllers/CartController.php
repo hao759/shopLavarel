@@ -48,10 +48,10 @@ class CartController extends Controller
     }
 
     
-    public function delete_Cart(Request $request)
+    public function delete_Cart($rowId)
     {
 
-        Cart::destroy();
+        Cart::update( $rowId,0);
 
         
         $category_list = DB::table('tbl_category_product')
