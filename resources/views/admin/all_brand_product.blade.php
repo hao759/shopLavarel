@@ -92,6 +92,4 @@
     </footer>
   </div>
 </div>
-
-
 @endsection

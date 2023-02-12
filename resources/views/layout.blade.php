@@ -6,7 +6,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <!-- <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet"> -->
 	<link href="{{URL::to('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -355,7 +354,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="{{('public/frontend/images/map.png')}}" alt="" />
+							<img src="{{URL::to('public/frontend/images/map.png')}}" alt="" />
 							<!-- <img src="{{URL::to('public/frontend/images/map.png')}}" alt="" />
 							<img src="public/frontend/images/map.png" alt="" /> -->
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
@@ -374,8 +373,6 @@
 			</div>
 		</div>
 	</footer><!--/Footer-->
-
-  
     <script src="{{asset('public/frontend/js/jquery.js')}}"></script>
 	<script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
