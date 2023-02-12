@@ -34,3 +34,7 @@ $this->AuthLogin();
 {!!$item->product_content!!}
 
 // md5($request->admin_password;)  print_r($result);
+
+composer require bumbummen99/shoppingcart
+
+php artisan --version

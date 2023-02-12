@@ -94,3 +94,5 @@ Route::get('/unactive-product/{product_id}', [ProductController::class, 'unactiv
 
 //Cart
 Route::post('/saveCart', [CartController::class, 'saveCart']);
+Route::get('/show_Cart', [CartController::class, 'showCart']);
+Route::get('/delete_Cart', [CartController::class, 'delete_Cart']);
