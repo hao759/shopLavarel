@@ -62,9 +62,15 @@ class HomeController extends Controller
             ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
             ->join('tbl_brand', 'tbl_product.brand_id', '=', 'tbl_brand.brand_id')
             ->where('product_id', $product_id)->get();
+            $relative_product = DB::table('tbl_product')
+            // ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
+            ->where('category_id', $detail_product[0]->category_id)
+            ->whereNotIn('product_id',[$product_id])
+            ->get();
         return view('sanpham.show_detail')
             ->with('category_list', $category_list)
             ->with('brand_list', $brand_list)
-            ->with('detail_product', $detail_product);
+            ->with('detail_product', $detail_product)
+            ->with('relative_product',$relative_product);
     }
 }

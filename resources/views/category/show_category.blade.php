@@ -1,6 +1,8 @@
 @extends('layout')
+
 @section('content')
 <div class="features_items"><!--features_items-->
+<!-- show theo cagetory id -->
 		@foreach($category_name as $key=>$item)
 						<h2 class="title text-center">Sản phẩm {{$item->category_name}}</h2>
 						@endforeach
