@@ -31,7 +31,7 @@
                         @foreach($content as $key=>$item)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img width="250px" height="120px" src="{{URL::to('public/upload/product/'.$item->options->image)}}"></a>
+								<a href=""><img width="210px" height="120px" src="{{URL::to('public/upload/product/'.$item->options->image)}}"></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">{{$item->name}}</a></h4>
@@ -42,9 +42,13 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
+									<form action="{{URL::to('/updata_Cart')}}" method="post">
+									{{csrf_field()}} 
 									<input class="cart_quantity_input" type="text" name="quantity" value={{$item->qty}} autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
+									<input type="hidden" name="row_ID" value={{$item->rowId}}  />
+									<input type="submit" value="Cap nhat" class="btn btn-default btn-sm"/>
+									<!-- <a class="cart_quantity_down" href=""> - </a> -->
+											</form>
 								</div>
 							</td>
 							<td class="cart_total">
