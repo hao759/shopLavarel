@@ -16,6 +16,7 @@ class ProductController extends Controller
 {
     public function addProduct()
     {
+        $this->AuthLogin();
         $category_list = DB::table('tbl_category_product')
             ->get();
         $brand_list = DB::table('tbl_brand')
@@ -23,6 +24,13 @@ class ProductController extends Controller
         return view('admin.add_product')
             ->with('category_list', $category_list)
             ->with('brand_list', $brand_list);
+    }
+    public function AuthLogin()
+    {
+        $admin_id = Session::get('admin_id');
+        if ($admin_id)
+            return Redirect::to('dashboard');
+        return Redirect::to('admin')->send();
     }
     public function allProduct()
     {

@@ -54,15 +54,20 @@
 								<h2>{{$item->product_name}}</h2>
 								<p>Web ID: 1089772</p>
 								<img src="images/product-details/rating.png" alt="" />
+
+								<form action="{{URL::to('/saveCart')}}" method="post">
+								{{csrf_field()}}
 								<span>
 									<span>US ${{$item->product_price}}</span>
 									<label>Quantity:</label>
-									<input type="number" value=1 min=1 />
-									<button type="button" class="btn btn-fefault cart">
+									<input name="qty" type="number" value=1 min=1 />
+									<input name="product_id" type="hidden" value={{$item->product_id}}/>
+									<button type="submit" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
 								</span>
+									</form>
 								<p><b>Thương hiệu:</b> {{$item->brand_name}}</p>
 								<p><b>Danh muc:</b> {{$item->category_name}}</p>
 								<!-- <p><b>Brand:</b> E-SHOPPER</p> -->
