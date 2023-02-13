@@ -7,7 +7,7 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
+						<form method="post" action="{{URL::to('/user-login')}}">
 							<input type="text" placeholder="Name" />
 							<input type="password" placeholder="password" />
 							<span>
@@ -24,10 +24,12 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="#">
-							<input type="text" placeholder="Name"/>
-							<input type="email" placeholder="Email Address"/>
-							<input type="password" placeholder="Password"/>
+						<form action="{{URL::to('/add_customer')}}" method="post">
+                        {{csrf_field()}} 
+							<input name="customer_name" type="text" placeholder="Name"/>
+							<input name="customer_email" type="email" placeholder="Email Address"/>
+							<input name="customer_password" type="password" placeholder="Password"/>
+                            <input name="customer_phone" type="text" placeholder="SDT"/>
 							<button type="submit" class="btn btn-default">Signup</button>
 						</form>
 					</div><!--/sign up form-->

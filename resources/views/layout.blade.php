@@ -90,7 +90,16 @@
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="{{URL::to('/show_Cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-lock"></i> 
+							<?php
+		$customer_name=Session::get('customer_name');
+		if($customer_name)
+			echo $customer_name;
+		else {
+			echo "Login";
+		}
+							?>
+							</a></li>
 							</ul>
 						</div>
 					</div>
