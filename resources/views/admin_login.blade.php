@@ -36,6 +36,12 @@ if ($mess) {
     Session::put('message', null);
 }
 ?>
+<script>
+console.log(mess);
+
+</script>
+
+
 		<form action="{{URL::to('/admin_dashboard')}}" method="post">
 			{{csrf_field()}}
 			<input type="text" class="ggg" name="admin_email" placeholder="E-MAIL" required="">

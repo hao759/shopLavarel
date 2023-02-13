@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -97,3 +98,7 @@ Route::post('/saveCart', [CartController::class, 'saveCart']);
 Route::get('/show_Cart', [CartController::class, 'showCart']);
 Route::get('/deleteCart/{rowId}', [CartController::class, 'delete_Cart']); 
 Route::post('/updata_Cart', [CartController::class, 'updata_Cart']);
+
+
+// Checkout
+Route::get('/login_checkout', [CheckoutController::class, 'login_checkout']);
