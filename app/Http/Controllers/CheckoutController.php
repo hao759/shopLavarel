@@ -34,8 +34,25 @@ class CheckoutController extends Controller
         return Redirect::to('/home');
     }
 
-    public function userLogin(Request $request)
+    public function checkout(Request $request)
     {
+        $category_list = DB::table('tbl_category_product')
+        ->where('category_status', 1)->get();
+    $brand_list = DB::table('tbl_brand')
+        ->where('brand_status', 1)->get();
 
+        return view("checkout.show_checkout")->with("category_list",$category_list)->with("brand_list",[]);
+    }
+    public function save_checkout(Request $request)
+    {
+        $category_list = DB::table('tbl_category_product')
+        ->where('category_status', 1)->get();
+    $brand_list = DB::table('tbl_brand')
+        ->where('brand_status', 1)->get();
+
+
+        
+
+        return view("checkout.show_checkout")->with("category_list",$category_list)->with("brand_list",[]);
     }
 }

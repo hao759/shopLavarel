@@ -102,5 +102,7 @@ Route::post('/updata_Cart', [CartController::class, 'updata_Cart']);
 
 // Checkout
 Route::get('/login_checkout', [CheckoutController::class, 'login_checkout']);
+Route::get('/checkout', [CheckoutController::class, 'checkout']);
 Route::post('/add_customer', [CheckoutController::class, 'add_customer']);
 Route::post('/user-login', [CheckoutController::class, 'userLogin']);
+Route::get('/save_checkout', [CheckoutController::class, 'save_checkout']);
