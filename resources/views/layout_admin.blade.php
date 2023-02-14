@@ -7,13 +7,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 
 <head>
-    <title>Admin Panel Category Bootstrap  | Home :: w3layouts</title>
+    <title>Admin Panel Category Bootstrap | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-</script>
+    <script type="application/x-javascript">
+    addEventListener("load", function() {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+    </script>
     <!-- bootstrap-css -->
     <link rel="stylesheet" href="{{asset('public/backend/css/bootstrap.min.css')}}">
     <!-- //bootstrap-css -->
@@ -192,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="{{('public/backend/images/2.png')}}">
                             <span class="username">
-                            <?php
+                                <?php
                     $admin_name = Session::get('admin_name');
                     if ($admin_name) {
                         echo $admin_name;
@@ -236,9 +243,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{URL::to('/add_product')}}">Thêm Sản phẩm</a></li>
                                 <li><a href="{{URL::to('/all_product')}}">Liệt kê sản phẩm</a></li>
                             </ul>
-                            </li>
                         </li>
-                         <li class="sub-menu">
+                        </li>
+                        <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
                                 <span>Danh mục sản phẩm</span>
@@ -247,7 +254,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{URL::to('/add_category_product')}}">Thêm danh mục sản phẩm</a></li>
                                 <li><a href="{{URL::to('/all_category_product')}}">Liệt kê danh mục</a></li>
                             </ul>
-                            </li>
+                        </li>
                         </li>
                         <li class="sub-menu">
                             <a href="javascript:;">
@@ -258,7 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{URL::to('/add_brand_product')}}">Thêm thương hiệu sản phẩm</a></li>
                                 <li><a href="{{URL::to('/all_brand_product')}}">Liệt kê thương hiệu sản phẩm</a></li>
                             </ul>
-                            </li>
+                        </li>
                         </li>
                     </ul>
                 </div>
@@ -376,8 +383,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script> -->
     <!-- calendar -->
     <script type="text/javascript" src="{{('public/backend/js/monthly.js')}}"></script>
-    
-    
+
+
 </body>
 
 </html>

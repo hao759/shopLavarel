@@ -17,7 +17,6 @@ class CartController extends Controller
     public function saveCart(Request $request)
     {
 
-
         $product_id = $request->product_id;
         $data['id'] = $request->product_id;
         $product_info = DB::table('tbl_product')

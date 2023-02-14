@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use DB;
 
-
 //cho session
-use Session;
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Session;
 
 session_start();
-
-
 
 class AdminController extends Controller
 {
@@ -25,8 +21,10 @@ class AdminController extends Controller
     public function AuthLogin()
     {
         $admin_id = Session::get('admin_id');
-        if ($admin_id)
+        if ($admin_id) {
             return Redirect::to('dashboard');
+        }
+
         return Redirect::to('admin')->send();
     }
 
@@ -38,7 +36,7 @@ class AdminController extends Controller
     public function dashboard(Request $request)
     {
         $admin_email = $request->admin_email;
-        $admin_password = $request->admin_password; 
+        $admin_password = $request->admin_password;
         $result = DB::table('tbl_admin')->where('admin_email', $admin_email)
             ->where('admin_password', $admin_password)
             ->first();

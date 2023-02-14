@@ -12,7 +12,7 @@ use Session;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 
-session_start();
+session_start(); 
 class BrandProduct extends Controller
 {
     public function addBrandProduct()
@@ -21,7 +21,8 @@ class BrandProduct extends Controller
     }
     public function allBrandProduct()
     {
-        $all_brand_product = DB::table('tbl_brand')->get();
+        $all_brand_product = DB::table('tbl_brand')
+        ->get();
         return view('admin.all_brand_product')
         ->with('all_brand_product', $all_brand_product);
 

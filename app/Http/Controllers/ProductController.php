@@ -65,7 +65,8 @@ class ProductController extends Controller
                 ->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             // $extesion=end(explode('.',$get_name_image));
-            $extesion = $product_image->getClientOriginalExtension();
+            $extesion = $product_image
+            ->getClientOriginalExtension();
             $new_image = $name_image . rand(0, 99) . '.' . $extesion;
             $product_image
                 ->move('public/upload/product', $new_image);

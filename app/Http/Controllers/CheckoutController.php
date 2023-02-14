@@ -19,7 +19,7 @@ class CheckoutController extends Controller
     {
         return view('checkout.login_checkout')
             ->with('category_list', [])
-            ->with('brand_list', []);
+            ->with('brand_list', []); 
     }
     public function add_customer(Request $request)
     {

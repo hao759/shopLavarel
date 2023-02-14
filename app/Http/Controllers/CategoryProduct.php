@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use DB;
-use Illuminate\Http\Request;
-
 
 //cho session
-use Session;
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Session;
 
 session_start();
 
