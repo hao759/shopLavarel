@@ -104,23 +104,22 @@
 									<li><a href="{{URL::to('/show_Cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a>
 								</li>
 								<?php
-							// 		Session::get('login_checkout');
-							// 	<li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-lock"></i></a></li>
-							// <?php
-								$customer_name=Session::get('customer_name');
-								if($customer_name){
+//         Session::get('login_checkout');
+//     <li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-lock"></i></a></li>
+// <?php
+								$customer_name = Session::get('customer_name');
+								if ($customer_name) {
 									?>
-											<li><a href="{{URL::to('/user_logout')}}">{{$customer_name}}<i class="fa fa-lock"></i>
+									<li><a href="{{URL::to('/user_logout')}}">{{$customer_name}}<i class="fa fa-lock"></i>
 								</br>Đăng xuất
 								<?php
-								}
-									else {
-								?>
-									<li><a href="{{URL::to('/user-login')}}"><i class="fa fa-lock">Đăng nhập</i></a></li>
+								} else {
+									?>
+									<li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-lock">Đăng nhập</i></a></li>
 									<?php
-							}
-										?>
-									
+								}
+								?>
+
 							</ul>
 						</div>
 					</div>

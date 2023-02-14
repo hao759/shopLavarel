@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         $data = array();
         $data['customer_name'] = $request->customer_name;
         $data['customer_email'] = $request->customer_email;
-        $data['customer_password'] = $request->customer_password;
+        $data['customer_password'] = md5($request->customer_password);
         $data['customer_phone'] = $request->customer_phone;
         $customer_ID = DB::table('tbl_customers')
             ->insertGetId($data);
@@ -65,7 +65,7 @@ class CheckoutController extends Controller
     public function userLogin(Request $request)
     {
         $user = $request->User;
-        $password = $request->password;
+        $password = md5($request->password);
         $custom = DB::table('tbl_customers')
             ->where('customer_email', $user)
             ->where('customer_password', $password)
