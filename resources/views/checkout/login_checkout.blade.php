@@ -8,8 +8,9 @@
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
 						<form method="post" action="{{URL::to('/user-login')}}">
-							<input type="text" placeholder="Name" />
-							<input type="password" placeholder="password" />
+						{{csrf_field()}} 
+							<input type="text" placeholder="User" name="User" />
+							<input type="password" placeholder="password" name ="password"/>
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in

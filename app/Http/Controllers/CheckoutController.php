@@ -37,22 +37,50 @@ class CheckoutController extends Controller
     public function checkout(Request $request)
     {
         $category_list = DB::table('tbl_category_product')
-        ->where('category_status', 1)->get();
-    $brand_list = DB::table('tbl_brand')
-        ->where('brand_status', 1)->get();
+            ->where('category_status', 1)
+            ->get();
+        $brand_list = DB::table('tbl_brand')
+            ->where('brand_status', 1)
+            ->get();
 
-        return view("checkout.show_checkout")->with("category_list",$category_list)->with("brand_list",[]);
+        return view("checkout.show_checkout")
+            ->with("category_list", $category_list)
+            ->with("brand_list", $brand_list);
     }
     public function save_checkout(Request $request)
     {
-        $category_list = DB::table('tbl_category_product')
-        ->where('category_status', 1)->get();
-    $brand_list = DB::table('tbl_brand')
-        ->where('brand_status', 1)->get();
 
+        $data = array();
+        $data['shipping_email'] = $request->shipping_email;
+        $data['shipping_name'] = $request->shipping_name;
+        $data['shipping_phone'] = $request->shipping_phone;
+        $data['shipping_notes'] = $request->shipping_notes;
+        $data['shipping_address'] = $request->shipping_address;
+        $shipping_id = DB::table('tbl_shipping')
+            ->insertGetId($data);
+        Session::put('shipping_id', $shipping_id);
+        return Redirect::to('/checkout');
+    }
 
-        
+    public function userLogin(Request $request)
+    {
+        $user = $request->User;
+        $password = $request->password;
+        $custom = DB::table('tbl_customers')
+            ->where('customer_email', $user)
+            ->where('customer_password', $password)
+            ->first();
+        //    print_r($password);
+        if ($custom) {
+            Session::put('customer_name', $custom->customer_name);
+            return Redirect::to('/home');
+        }
+        return Redirect::to('/home1');
 
-        return view("checkout.show_checkout")->with("category_list",$category_list)->with("brand_list",[]);
+    }
+    public function user_logout(Request $request)
+    {
+        Session::put('customer_name', "");
+        return Redirect::to('/login_checkout');
     }
 }

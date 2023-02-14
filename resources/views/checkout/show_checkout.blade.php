@@ -34,7 +34,7 @@
 
 			<div class="shopper-informations">
 				<div class="row">
-					<div class="col-sm-5 clearfix">
+					<div class="col-sm-7 ">
 						<div class="bill-to">
 							<p>Điền thông tin gửi hàng</p>
 							<div class="form-one">
@@ -44,18 +44,16 @@
 									<input type="text" name="shipping_name" placeholder="Họ tên*">
 									<input type="text" name="shipping_phone" placeholder="SDT">
 									<input type="text" name="shipping_address" placeholder="Địa chỉ">
+									<div class="order-message">
+												<textarea name="shipping_notes"  placeholder="Ghi chú đơn hàng" rows="7"></textarea>
+											<label><input type="checkbox"> Shipping to bill address</label>
+										</div>
 									<button type="submit" class="btn btn-default" >Gửi </button>
 								</form>
 							</div>
-							
 						</div>
 					</div>
 					<div class="col-sm-4">
-						<div class="order-message">
-							<p>Ghi chú đơn hàng</p>
-							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="7"></textarea>
-							<label><input type="checkbox"> Shipping to bill address</label>
-						</div>	
 					</div>					
 				</div>
 			</div>

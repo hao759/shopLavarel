@@ -101,8 +101,10 @@ Route::post('/updata_Cart', [CartController::class, 'updata_Cart']);
 
 
 // Checkout
-Route::get('/login_checkout', [CheckoutController::class, 'login_checkout']);
-Route::get('/checkout', [CheckoutController::class, 'checkout']);
-Route::post('/add_customer', [CheckoutController::class, 'add_customer']);
-Route::post('/user-login', [CheckoutController::class, 'userLogin']);
-Route::get('/save_checkout', [CheckoutController::class, 'save_checkout']);
+Route::get('/login_checkout', [CheckoutController::class, 'login_checkout']);//hiện user đăng nhập vs đki
+Route::get('/checkout', [CheckoutController::class, 'checkout']);      //Điền thông tin gửi hàng
+Route::get('/save_checkout', [CheckoutController::class, 'save_checkout']);//nhận cái trên
+Route::post('/add_customer', [CheckoutController::class, 'add_customer']);//
+Route::post('/user-login', [CheckoutController::class, 'userLogin']);//user đăng nhập
+Route::get('/user_logout', [CheckoutController::class, 'user_logout']);
+
