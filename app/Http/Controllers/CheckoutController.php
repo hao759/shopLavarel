@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use DB;
-
 //cho session
-use Session;
-use App\Http\Requests;
+use DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Cart;
+use Session;
 
 session_start();
 
@@ -19,7 +16,7 @@ class CheckoutController extends Controller
     {
         return view('checkout.login_checkout')
             ->with('category_list', [])
-            ->with('brand_list', []); 
+            ->with('brand_list', []);
     }
     public function add_customer(Request $request)
     {
@@ -30,7 +27,7 @@ class CheckoutController extends Controller
         $data['customer_phone'] = $request->customer_phone;
         $customer_ID = DB::table('tbl_customers')
             ->insertGetId($data);
-        Session::put('customer_ID', $customer_ID);
+        Session::put('customer_id', $customer_ID);
         return Redirect::to('/home');
     }
 
@@ -72,6 +69,7 @@ class CheckoutController extends Controller
             ->first();
         //    print_r($password);
         if ($custom) {
+            Session::put('customer_id', $custom->customer_id);
             Session::put('customer_name', $custom->customer_name);
             return Redirect::to('/home');
         }
@@ -82,5 +80,11 @@ class CheckoutController extends Controller
     {
         Session::put('customer_name', "");
         return Redirect::to('/login_checkout');
+    }
+    
+    public function payment(Request $request)
+    {
+        return view('checkout.payment')->with("category_list", [])
+        ->with("brand_list",[]);;
     }
 }

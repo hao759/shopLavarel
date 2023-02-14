@@ -59,7 +59,6 @@
             </div>
         </div>
         <!--/header_top-->
-
         <div class="header-middle">
             <!--header-middle-->
             <div class="container">
@@ -98,7 +97,7 @@
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
                                 <li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                                <li><a href="{{URL::to('/payment')}}"><i class="fa fa-star"></i> Payment</a></li>
                                 <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a>
                                 </li>
                                 <li><a href="{{URL::to('/show_Cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a>
@@ -107,19 +106,21 @@
 //         Session::get('login_checkout');
 //     <li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-lock"></i></a></li>
 // <?php
-						$customer_name = Session::get('customer_name');
-						if ($customer_name) {
-							?>
+$customer_id = Session::get('customer_id');
+$shipping_id = Session::get('shipping_id');
+$customer_name = Session::get('customer_name');
+if ($customer_name) {
+    ?>
                                 <li><a href="{{URL::to('/user_logout')}}">{{$customer_name}}<i class="fa fa-lock"></i>
                                         </br>Đăng xuất
                                         <?php
-						} else {
-							?>
+} else {
+    ?>
                                 <li><a href="{{URL::to('/login_checkout')}}"><i class="fa fa-lock">Đăng nhập</i></a>
                                 </li>
                                 <?php
-							}
-							?>
+}
+?>
 
                             </ul>
                         </div>

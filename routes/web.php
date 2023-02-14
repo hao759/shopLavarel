@@ -108,3 +108,5 @@ Route::post('/add_customer', [CheckoutController::class, 'add_customer']);//
 Route::post('/user-login', [CheckoutController::class, 'userLogin']);//user đăng nhập
 Route::get('/user_logout', [CheckoutController::class, 'user_logout']);
 
+Route::get('/payment', [CheckoutController::class, 'payment']);
+
