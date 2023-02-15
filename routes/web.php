@@ -18,38 +18,26 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 // Route::get('/home', 'HomeController@index');
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
 
-
 Route::get('/showByDanhMuc/{category_id}', [HomeController::class, 'showByDanhMuc']);
 Route::get('/chi_tiet_san_pham/{product_id}', [HomeController::class, 'showChiTietSanPham']);
-
-
-
-
-
-
-
-
 
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);
 Route::get('/logout', [AdminController::class, 'logout']);
 
-
-//Category 
+//Category
 Route::get('/add_category_product', [CategoryProduct::class, 'addCategoryProduct']);
 Route::get('/all_category_product', [CategoryProduct::class, 'allCategoryProduct']);
 
-
 Route::post('/save_category_product', [CategoryProduct::class, 'saveCategoryProduct']);
 Route::get('/edit_category_product/{category_id}', [CategoryProduct::class, 'editCategoryProduct']);
-
 
 Route::post('/update_category_product/{category_id}', [CategoryProduct::class, 'updateCategoryProduct']);
 Route::get('/delete_category_product/{category_id}', [CategoryProduct::class, 'deleteCategoryProduct']);
@@ -58,9 +46,7 @@ Route::get('/delete_category_product/{category_id}', [CategoryProduct::class, 'd
 Route::get('/active-category-product/{category_id}', [CategoryProduct::class, 'active_category_product']);
 Route::get('/unactive-category-product/{category_id}', [CategoryProduct::class, 'unactive_category_product']);
 
-
-
-//Brand Product 
+//Brand Product
 Route::get('/add_brand_product', [BrandProduct::class, 'addBrandProduct']);
 Route::get('/all_brand_product', [BrandProduct::class, 'allBrandProduct']);
 
@@ -73,10 +59,7 @@ Route::get('/delete_brand_product/{brand_id}', [BrandProduct::class, 'deleteBran
 Route::get('/active-brand-product/{brand_id}', [BrandProduct::class, 'active_brand_product']);
 Route::get('/unactive-brand-product/{brand_id}', [BrandProduct::class, 'unactive_brand_product']);
 
-
-
-
-// Product 
+// Product
 Route::get('/add_product', [ProductController::class, 'addProduct']);
 Route::get('/all_product', [ProductController::class, 'allProduct']);
 
@@ -89,24 +72,19 @@ Route::get('/delete_product/{product_id}', [ProductController::class, 'deletePro
 Route::get('/active-product/{product_id}', [ProductController::class, 'active_product']);
 Route::get('/unactive-product/{product_id}', [ProductController::class, 'unactive_product']);
 
-
-
-
-
 //Cart
 Route::post('/saveCart', [CartController::class, 'saveCart']);
 Route::get('/show_Cart', [CartController::class, 'showCart']);
-Route::get('/deleteCart/{rowId}', [CartController::class, 'delete_Cart']); 
+Route::get('/deleteCart/{rowId}', [CartController::class, 'delete_Cart']);
 Route::post('/updata_Cart', [CartController::class, 'updata_Cart']);
 
-
 // Checkout
-Route::get('/login_checkout', [CheckoutController::class, 'login_checkout']);//hiện user đăng nhập vs đki
-Route::get('/checkout', [CheckoutController::class, 'checkout']);      //Điền thông tin gửi hàng
-Route::get('/save_checkout', [CheckoutController::class, 'save_checkout']);//nhận cái trên
-Route::post('/add_customer', [CheckoutController::class, 'add_customer']);//
-Route::post('/user-login', [CheckoutController::class, 'userLogin']);//user đăng nhập
+Route::get('/login_checkout', [CheckoutController::class, 'login_checkout']); //hiện user đăng nhập vs đki
+Route::get('/checkout', [CheckoutController::class, 'checkout']); //Điền thông tin gửi hàng
+Route::get('/save_checkout', [CheckoutController::class, 'save_checkout']); //nhận cái trên
+Route::post('/add_customer', [CheckoutController::class, 'add_customer']); //
+Route::post('/user-login', [CheckoutController::class, 'userLogin']); //user đăng nhập
 Route::get('/user_logout', [CheckoutController::class, 'user_logout']);
 
 Route::get('/payment', [CheckoutController::class, 'payment']);
-
+Route::post('/order', [CheckoutController::class, 'Order']);

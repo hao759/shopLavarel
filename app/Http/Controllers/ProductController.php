@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 use DB;
 
-
 //cho session
-use Session;
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Session;
 
 session_start();
 class ProductController extends Controller
@@ -28,8 +27,10 @@ class ProductController extends Controller
     public function AuthLogin()
     {
         $admin_id = Session::get('admin_id');
-        if ($admin_id)
+        if ($admin_id) {
             return Redirect::to('dashboard');
+        }
+
         return Redirect::to('admin')->send();
     }
     public function allProduct()
@@ -55,7 +56,8 @@ class ProductController extends Controller
         $data['product_price'] = $request->product_price;
         $data['product_status'] = $request->product_status;
         $data['product_name'] = $request->product_name;
-
+        $data['created_at'] = new \DateTime();
+        $data['updated_at'] = Carbon::now();
         $product_image = $request
             ->file('product_image');
         $data['product_image'] = '';
@@ -66,7 +68,7 @@ class ProductController extends Controller
             $name_image = current(explode('.', $get_name_image));
             // $extesion=end(explode('.',$get_name_image));
             $extesion = $product_image
-            ->getClientOriginalExtension();
+                ->getClientOriginalExtension();
             $new_image = $name_image . rand(0, 99) . '.' . $extesion;
             $product_image
                 ->move('public/upload/product', $new_image);

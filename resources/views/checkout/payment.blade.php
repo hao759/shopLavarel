@@ -68,16 +68,19 @@ $content = Cart::content();
             </div>
         </div>
     </section>
-
-    <div class="payment-options">
-        <span>
-            <label><input value=1 type="checkbox"> Nhận tiền mặt</label>
-        </span>
-        <span>
-            <label><input value=2 type="checkbox"> Check Payment</label>
-        </span>
-        <span>
-            <label><input value=3 type="checkbox"> Paypal</label>
-        </span>
-    </div>
-    @endsection
+    <form method="post" action="{{URL::to('/order')}}">
+        {{csrf_field}}
+        <div class="payment-options">
+            <span>
+                <label><input value=1 type="checkbox"> Nhận tiền mặt</label>
+            </span>
+            <span>
+                <label><input value=2 type="checkbox"> Check Payment</label>
+            </span>
+            <span>
+                <label><input value=3 type="checkbox"> Paypal</label>
+            </span>
+            <button type="submit" class="btn btn-primary" value=" Đặt hàng">
+        </div>
+    </form>
+    < @endsection

@@ -81,10 +81,25 @@ class CheckoutController extends Controller
         Session::put('customer_name', "");
         return Redirect::to('/login_checkout');
     }
-    
+
     public function payment(Request $request)
     {
         return view('checkout.payment')->with("category_list", [])
-        ->with("brand_list",[]);;
+            ->with("brand_list", []);
+    }
+
+    public function Order(Request $request)
+    {
+
+        // $data = array();
+        // $data['shipping_email'] = $request->shipping_email;
+        // $data['shipping_name'] = $request->shipping_name;
+        // $data['shipping_phone'] = $request->shipping_phone;
+        // $data['shipping_notes'] = $request->shipping_notes;
+        // $data['shipping_address'] = $request->shipping_address;
+        // $shipping_id = DB::table('tbl_shipping')
+        //     ->insertGetId($data);
+        // Session::put('shipping_id', $shipping_id);
+        // return Redirect::to('/checkout');
     }
 }
