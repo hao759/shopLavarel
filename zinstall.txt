@@ -40,3 +40,9 @@ composer require bumbummen99/shoppingcart
 php artisan --version
 
  $data_insert= DB::table('tbl_customers')->insertGetId($data);
+
+
+ <meta name="description"  keyword  robot follow tat ca
+ view port  cho zoom screen
+
+  canonical

@@ -2,10 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content=`<?php if (isset($meta_desc) == 1) {
+    echo $meta_desc;
+} else {
+    echo "";
+}
+?>` />
+
+
+    <meta name="keywords" content=`<?php if (isset($meta_keywords)) {
+    echo $meta_keywords;
+} else {
+    echo "";
+}
+?>` />
+    <meta name="canonical" content=`<?php if (isset($url_canonical) == 1) {
+    echo $url_canonical;
+} else {
+    echo "";
+}
+?>` />
+
+
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta name="author" content="SatLinh">
+    <link rel="icon" type="image/x-icon" href="" />
+
+
     <title>Home | E-Shopper</title>
     <link href="{{URL::to('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
