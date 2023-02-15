@@ -46,3 +46,15 @@ php artisan --version
  view port  cho zoom screen
 
   canonical
+
+
+  chia sẻ fb vô lấy code nút button ,ko tạp app
+
+
+   <!-- <meta property="og:image" content="{{$image_og}}" />
+    <meta property="og:site_name" content="thiatv.com" />
+    <meta property="og:description" content="{{$meta_desc}}" />
+    <meta property="og:title" content="{{$meta_title}}" />
+    <meta property="og:url" content="{{$url_canonical}}" />
+    <meta property="og:type" content="website" /> -->
+    thông tin hiện ra lúc share

@@ -16,6 +16,7 @@
     echo "";
 }
 ?>` />
+
     <meta name="canonical" content=`<?php if (isset($url_canonical) == 1) {
     echo $url_canonical;
 } else {
@@ -27,6 +28,16 @@
     <meta name="robots" content="INDEX,FOLLOW" />
     <meta name="author" content="SatLinh">
     <link rel="icon" type="image/x-icon" href="" />
+
+
+    <meta property="og:image" content="hehehe" />
+    <meta property="og:site_name" content="thiatv.com" />
+    <meta property="og:description" content="hehehe" />
+    <meta property="og:title" content="hehehe" />
+    <meta property="og:url" content="hehehe" />
+    <meta property="og:type" content="website" />
+
+
 
 
     <title>Home | E-Shopper</title>
@@ -70,7 +81,13 @@
                     <div class="col-sm-6">
                         <div class="social-icons pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#">
+                                        <div class="fb-share-button" data-href="http://localhost:8080/shopLavarel/"
+                                            data-layout="button_count" data-size="small"><a target="_blank"
+                                                href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2FshopLavarel%2F&amp;src=sdkpreparse"
+                                                class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+                                    </a>
+                                </li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -399,7 +416,10 @@ if ($customer_name) {
                                 <h2>24 DEC 2014</h2>
                             </div>
                         </div>
-
+                        <div class="fb-share-button" data-href="http://localhost:8080/shopLavarel/"
+                            data-layout="button_count" data-size="small"><a target="_blank"
+                                href="https://www.facebook.com/sharer/sharer.php?u={{$url_canonical}}%2F&amp;src=sdkpreparse"
+                                class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
                                 <a href="#">
@@ -441,7 +461,6 @@ if ($customer_name) {
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
@@ -452,6 +471,10 @@ if ($customer_name) {
             </div>
         </div>
     </footer>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=553207829984175&autoLogAppEvents=1"
+        nonce="4cWnRHPN"></script>
     <!--/Footer-->
     <script src="{{asset('public/frontend/js/jquery.js')}}"></script>
     <script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script>
