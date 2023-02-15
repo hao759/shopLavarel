@@ -321,6 +321,7 @@ if ($customer_name) {
 									</div>
 								</div>
 							</div> -->
+
                             @foreach($category_list as $key=>$item)
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -345,6 +346,8 @@ if ($customer_name) {
                                 </ul>
                             </div>
                         </div>
+                        <div class="fb-like" data-href="http://localhost:8080/shopLavarel/" data-width=""
+                            data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
                         <!--/brands_products-->
 
                         <div class="price-range">
@@ -373,6 +376,10 @@ if ($customer_name) {
                 </div>
             </div>
         </div>
+        <!-- <div class="fb-comments" data-href="http://localhost:8080/shopLavarel/" data-width="" data-numposts="5"></div> -->
+        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+            data-width="" data-numposts="5"></div>
+        <!-- code Comment fb -->
     </section>
 
     <footer id="footer">
@@ -420,6 +427,8 @@ if ($customer_name) {
                             data-layout="button_count" data-size="small"><a target="_blank"
                                 href="https://www.facebook.com/sharer/sharer.php?u={{$url_canonical}}%2F&amp;src=sdkpreparse"
                                 class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+
+
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
                                 <a href="#">
@@ -471,6 +480,7 @@ if ($customer_name) {
             </div>
         </div>
     </footer>
+
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=553207829984175&autoLogAppEvents=1"

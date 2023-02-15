@@ -48,7 +48,8 @@ php artisan --version
   canonical
 
 
-  chia sẻ fb vô lấy code nút button ,ko tạp app
+Chia sẻ fb vô lấy code nút button,gắn vào xong (ko tạo app)
+https://developers.facebook.com/docs/plugins/share-button/
 
 
    <!-- <meta property="og:image" content="{{$image_og}}" />
@@ -57,4 +58,8 @@ php artisan --version
     <meta property="og:title" content="{{$meta_title}}" />
     <meta property="og:url" content="{{$url_canonical}}" />
     <meta property="og:type" content="website" /> -->
-    thông tin hiện ra lúc share
+thông tin hiện ra lúc share
+
+
+Thích như trên mã B2 như trên đợi load xíu
+link mình ko chạy @@
