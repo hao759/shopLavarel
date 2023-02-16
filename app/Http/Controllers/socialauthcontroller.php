@@ -13,14 +13,14 @@ class socialauthcontroller extends Controller
 {
     public function githubredirect(Request $request)
     {
-        return Socialite::driver('github')->redirect();
+        return Socialite::driver('github')->stateless()->redirect();
     }
     public function githubcallaback(Request $request)
     {
         print_r($request->all());
-        sleep(3);
-        $userdata = Socialite::driver('github')->user();
+        $userdata = Socialite::driver('github')->stateless()->user();
         dd($userdata);
+
         // $user = User::where('email', $userdata->email)->where('auth_type', 'github')->first();
         // if ($user) {
         //     Auth::login($user);
@@ -37,18 +37,15 @@ class socialauthcontroller extends Controller
         //     Auth::login($user);
         //     return redirect('/dashboard');
         // }
-
     }
     public function googleredirect(Request $request)
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
     public function googlecallaback(Request $request)
     {
         print_r($request->all());
-        sleep(3);
-        $userdata = Socialite::driver('google')->user();
+        $userdata = Socialite::driver('google')->stateless()->user();
         dd($userdata);
-
     }
 }
