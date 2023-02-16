@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use DB;
 use Illuminate\Http\Request;
+use Mail;
+use Redirect;
 
 //cho session
 
@@ -73,5 +75,19 @@ class HomeController extends Controller
             ->with('brand_list', $brand_list)
             ->with('detail_product', $detail_product)
             ->with('relative_product', $relative_product);
+    }
+
+    public function sendMail()
+    {
+        $to_name = "hieu tan tutorial";
+        $to_email = "qhao74155@gmail.com"; //send to this email
+
+        $data = array("name" => "noi dung ten", "body" => 'noi dung body'); //body of mail.blade.php
+
+        Mail::send('pages.send_mail', $data, function ($message) use ($to_name, $to_email) {
+            $message->to($to_email)->subject('test mail nhé'); //send this mail with subject
+            $message->from($to_email, $to_name); //send from this mail
+        });
+        return Redirect::to('/home');
     }
 }

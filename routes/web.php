@@ -32,6 +32,9 @@ Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);
 Route::get('/logout', [AdminController::class, 'logout']);
 
+//Send mail
+Route::get('/sendMail', [HomeController::class, 'sendMail']);
+
 //Category
 Route::get('/add_category_product', [CategoryProduct::class, 'addCategoryProduct']);
 Route::get('/all_category_product', [CategoryProduct::class, 'allCategoryProduct']);
