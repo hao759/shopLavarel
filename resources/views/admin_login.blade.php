@@ -60,6 +60,19 @@ if ($mess) {
                 <div class="clearfix"></div>
                 <input type="submit" value="Sign In" name="login">
             </form>
+            <div style="margin-left: 30px;" class="flex items-center justify-end mt-4">
+                <a href="{{ URL::to('/auth/google/redirect')}}">
+                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
+                </a>
+            </div>
+
+            <div style="margin-left: 30px;" class="flex items-center justify-end mt-4">
+                <a href="{{URL::to('/auth/github/redirect')}}">
+                    <img width="100px" height="50px"
+                        src="https://wiki.matbao.net/wp-content/uploads/2019/09/github-la-gi-1-1200x700.jpg">
+                </a>
+            </div>
+
             <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>
         </div>
     </div>

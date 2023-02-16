@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
                 <!--  notification end -->
             </div>
-            <a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Log Out con</a>
+            <a href="{{URL::to('/logout1')}}"><i class="fa fa-key"></i> Log Out con</a>
             <div class="top-nav clearfix">
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
@@ -200,11 +200,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <img alt="" src="{{('public/backend/images/2.png')}}">
                             <span class="username">
                                 <?php
-                    $admin_name = Session::get('admin_name');
-                    if ($admin_name) {
-                        echo $admin_name;
-                    }
-                    ?>
+$admin_name = Session::get('admin_name');
+if ($admin_name) {
+    echo $admin_name;
+}
+?>
 
                             </span>
                             <b class="caret"></b>
@@ -212,7 +212,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="dropdown-menu extended logout">
                             <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="{{URL::to('/logout1')}}"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->

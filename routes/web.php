@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\socialauthcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
-
 // Route::get('/home', 'HomeController@index');
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
@@ -30,9 +30,7 @@ Route::get('/chi_tiet_san_pham/{product_id}', [HomeController::class, 'showChiTi
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);
-Route::get('/logout', [AdminController::class, 'logout']);
-
-//Send mail
+Route::get('/logout1', [AdminController::class, 'logout']);
 Route::get('/sendMail', [HomeController::class, 'sendMail']);
 
 //Category
@@ -91,3 +89,9 @@ Route::get('/user_logout', [CheckoutController::class, 'user_logout']);
 
 Route::get('/payment', [CheckoutController::class, 'payment']);
 Route::post('/order', [CheckoutController::class, 'Order']);
+
+/* Google Social Login */
+Route::get('/auth/github/redirect', [socialauthcontroller::class, 'githubredirect']);
+Route::get('/auth/github/callback', [socialauthcontroller::class, 'githubcallaback']);
+Route::get('/auth/google/redirect', [socialauthcontroller::class, 'googleredirect']);
+Route::get('/auth/google/callback', [socialauthcontroller::class, 'googlecallaback']);

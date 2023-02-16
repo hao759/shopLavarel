@@ -63,3 +63,10 @@ thông tin hiện ra lúc share
 
 Thích như trên mã B2 như trên đợi load xíu
 link mình ko chạy @@
+
+
+Login GG
+https://codeanddeploy.com/blog/php/laravel-9-socialite-login-with-google-complete-tutorial
+https://codeconia.com/how-to-add-google-and-github-auth-into-a-laravel-application/  //cai tren sai
+composer require laravel/socialite  
+tải này về 3

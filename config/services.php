@@ -12,7 +12,7 @@ return [
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |
-    */
+     */
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -29,6 +29,16 @@ return [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+    ],
+    'google' => [
+        'client_id' => '650363143750-tlpdsd0dejrbb50km6irpto4c9trs1le.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://localhost:8080/shopLavarel/auth/google/callback',
+    ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://localhost:8080/shopLavarel/auth/github/callback',
     ],
 
 ];
