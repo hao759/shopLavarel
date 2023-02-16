@@ -17,12 +17,8 @@
 }
 ?>` />
 
-    <meta name="canonical" content=`<?php if (isset($url_canonical) == 1) {
-    echo $url_canonical;
-} else {
-    echo "";
-}
-?>` />
+
+    <meta name="canonical" content=<?php echo isset($url_canonical) ? $url_canonical : "" ?> />
 
 
     <meta name="robots" content="INDEX,FOLLOW" />
@@ -150,8 +146,7 @@ $customer_id = Session::get('customer_id');
 $shipping_id = Session::get('shipping_id');
 $customer_name = Session::get('customer_name');
 if ($customer_name) {
-    ?>
-                                <li><a href="{{URL::to('/user_logout')}}">{{$customer_name}}<i class="fa fa-lock"></i>
+    ?> <li><a href="{{URL::to('/user_logout')}}">{{$customer_name}}<i class="fa fa-lock"></i>
                                         </br>Đăng xuất
                                         <?php
 } else {
@@ -236,7 +231,8 @@ if ($customer_name) {
                                 <div class="col-sm-6">
                                     <h1><span>E</span>-SHOPPER</h1>
                                     <h2>Free E-Commerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor
                                         incididunt ut labore et dolore magna aliqua. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
@@ -250,7 +246,8 @@ if ($customer_name) {
                                 <div class="col-sm-6">
                                     <h1><span>E</span>-SHOPPER</h1>
                                     <h2>100% Responsive Design</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor
                                         incididunt ut labore et dolore magna aliqua. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
@@ -265,7 +262,8 @@ if ($customer_name) {
                                 <div class="col-sm-6">
                                     <h1><span>E</span>-SHOPPER</h1>
                                     <h2>Free Ecommerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor
                                         incididunt ut labore et dolore magna aliqua. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
@@ -423,10 +421,10 @@ if ($customer_name) {
                                 <h2>24 DEC 2014</h2>
                             </div>
                         </div>
-                        <div class="fb-share-button" data-href="http://localhost:8080/shopLavarel/"
+                        <!-- <div class="fb-share-button" data-href="http://localhost:8080/shopLavarel/"
                             data-layout="button_count" data-size="small"><a target="_blank"
-                                href="https://www.facebook.com/sharer/sharer.php?u={{$url_canonical}}%2F&amp;src=sdkpreparse"
-                                class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+                                href="https://www.facebook.com/sharer/sharer.php?u=url_canonical%2F&amp;src=sdkpreparse"
+                                class="fb-xfbml-parse-ignore">Chia sẻ</a></div>    bien url_canonical tu dien vô-->
 
 
                         <div class="col-sm-3">
