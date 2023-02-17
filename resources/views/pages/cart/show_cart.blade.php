@@ -12,8 +12,8 @@
         </div>
         <div class="table-responsive cart_info">
             <?php
-            $content = Cart::content();
-            //  print_r()
+$content = Cart::content();
+//  print_r()
 ?>
             <table class="table table-condensed">
                 <thead>
@@ -61,9 +61,6 @@
                         </td>
                     </tr>
                     @endforeach
-
-
-
                 </tbody>
             </table>
 

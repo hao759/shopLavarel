@@ -8,6 +8,7 @@ use Cart;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Session;
 
 session_start();
 class CartController extends Controller
@@ -79,6 +80,47 @@ class CartController extends Controller
 
     public function addToCartAjax(Request $request)
     {
-        print_r($request->all());
+        $data = $request->all();
+        $session_id = substr(md5(microtime()), rand(0, 26), 5);
+        $cart_ajax = Session::get('cart_ajax');
+        // print_r($cart_ajax);
+        // return;
+        if ($cart_ajax == true) {
+            $is_avaiable = 0;
+            foreach ($cart_ajax as $key => $val) {
+                if ($val['product_id'] == $data['cart_product_id']) {
+                    $is_avaiable++;
+                }
+            }
+            if ($is_avaiable == 0) {
+                $cart_ajax[] = array(
+                    'session_id' => $session_id,
+                    'product_name' => $data['cart_product_name'],
+                    'product_id' => $data['cart_product_id'],
+                    'product_image' => $data['cart_product_image'],
+                    'product_qty' => $data['cart_product_qty'],
+                    'product_price' => $data['cart_product_price'],
+                );
+                Session::put('cart_ajax', $cart_ajax);
+            }
+        } else {
+            $cart_ajax[] = array(
+                'session_id' => $session_id,
+                'product_name' => $data['cart_product_name'],
+                'product_id' => $data['cart_product_id'],
+                'product_image' => $data['cart_product_image'],
+                'product_qty' => $data['cart_product_qty'],
+                'product_price' => $data['cart_product_price'],
+            );
+            Session::put('cart_ajax', $cart_ajax);
+        }
+
+        Session::save();
+
+    }
+    public function gio_hang()
+    {
+        return view('pages.cart.cart_ajax')->with('category_list', [])
+            ->with('brand_list', []);
     }
 }

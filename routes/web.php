@@ -79,6 +79,7 @@ Route::get('/show_Cart', [CartController::class, 'showCart']);
 Route::get('/deleteCart/{rowId}', [CartController::class, 'delete_Cart']);
 Route::post('/updata_Cart', [CartController::class, 'updata_Cart']);
 Route::post('/add_to_cart_ajax', [CartController::class, 'addToCartAjax']);
+Route::get('/gio-hang', [CartController::class, 'gio_hang']);
 
 // Checkout
 Route::get('/login_checkout', [CheckoutController::class, 'login_checkout']); //hiện user đăng nhập vs đki
