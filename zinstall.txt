@@ -76,3 +76,6 @@ $(document).ready(function() {
         
     })
     chạy khi mới load
+
+
+    get name của option con

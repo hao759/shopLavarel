@@ -44,11 +44,10 @@
                             <form method="get" action="{{URL::to('/save_checkout')}}">
                                 <input type="text" name="shipping_email" placeholder="Email">
                                 <input type="text" name="shipping_name" placeholder="Họ tên*">
-                                <input type="text" name="shipping_phone" placeholder="SDT">
+                                <!-- <input type="text" name="shipping_phone" placeholder="SDT"> -->
                                 <input type="text" name="shipping_address" placeholder="Địa chỉ">
                                 <div class="order-message">
-                                    <textarea name="shipping_notes" placeholder="Ghi chú đơn hàng" rows="7"></textarea>
-                                    <label><input type="checkbox"> Shipping to bill address</label>
+                                    <textarea name="shipping_notes" placeholder="Ghi chú đơn hàng" rows="4"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-default">Gửi </button>
                             </form>
