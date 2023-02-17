@@ -11,14 +11,15 @@ use Laravel\Socialite\Facades\Socialite;
 
 class socialauthcontroller extends Controller
 {
-    public function githubredirect(Request $request)
+    public function githubredirect(Request $request, $type_social)
     {
-        return Socialite::driver('github')->stateless()->redirect();
+        return Socialite::driver($type_social)->stateless()->redirect();
     }
-    public function githubcallaback(Request $request)
+    public function githubcallaback(Request $request, $type_social)
     {
         print_r($request->all());
-        $userdata = Socialite::driver('github')->stateless()->user();
+        print_r($type_social);
+        $userdata = Socialite::driver($type_social)->stateless()->user();
         dd($userdata);
 
         // $user = User::where('email', $userdata->email)->where('auth_type', 'github')->first();
@@ -38,14 +39,14 @@ class socialauthcontroller extends Controller
         //     return redirect('/dashboard');
         // }
     }
-    public function googleredirect(Request $request)
-    {
-        return Socialite::driver('google')->stateless()->redirect();
-    }
-    public function googlecallaback(Request $request)
-    {
-        print_r($request->all());
-        $userdata = Socialite::driver('google')->stateless()->user();
-        dd($userdata);
-    }
+    // public function googleredirect(Request $request)
+    // {
+    //     return Socialite::driver('google')->stateless()->redirect();
+    // }
+    // public function googlecallaback(Request $request)
+    // {
+    //     print_r($request->all());
+    //     $userdata = Socialite::driver('google')->stateless()->user();
+    //     dd($userdata);
+    // }
 }

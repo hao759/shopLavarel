@@ -44,6 +44,7 @@
     <link href="{{asset('public/frontend/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/responsive.css')}}" rel="stylesheet">
+    <link href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -479,6 +480,7 @@ if ($customer_name) {
         </div>
     </footer>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=553207829984175&autoLogAppEvents=1"
@@ -490,6 +492,47 @@ if ($customer_name) {
     <script src="{{asset('public/frontend/js/price-range.js')}}"></script>
     <script src="{{asset('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{asset('public/frontend/js/main.js')}}"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.add_to_cart').click(function() {
+            var id = $(this).data('id_product');
+            var cart_product_id = $('.cart_product_id_' + id).val();
+            var cart_product_name = $('.cart_product_name_' + id).val();
+            var cart_product_image = $('.cart_product_image_' + id).val();
+            var cart_product_price = $('.cart_product_price_' + id).val();
+            var cart_product_qty = $('.cart_product_qty_' + id).val();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "{{url('/add_to_cart_ajax')}}",
+                method: 'POST',
+                data: {
+                    cart_product_id,
+                    cart_product_name,
+                    cart_product_image,
+                    cart_product_price,
+                    cart_product_qty,
+                    _token
+                },
+                success: function(data) {
+                    swal({
+                            title: "Đã thêm sản phẩm vào giỏ hàng",
+                            text: "Bạn có thể mua hàng tiếp hoặc tới giỏ hàng để tiến hành thanh toán",
+                            showCancelButton: true,
+                            cancelButtonText: "Xem tiếp",
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Đi đến giỏ hàng",
+                            closeOnConfirm: false
+                        },
+                        function() {
+                            window.location.href = "{{url('/gio-hang')}}";
+                        });
+
+                }
+
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>

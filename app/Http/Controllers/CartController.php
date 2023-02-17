@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use DB;
+use Cart;
 
 //cho session
-use Session;
-use App\Http\Requests;
+use DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Cart;
 
 session_start();
 class CartController extends Controller
@@ -42,18 +40,15 @@ class CartController extends Controller
             ->where('brand_status', 1)
             ->get();
 
-
         return view('pages.cart.show_cart')
             ->with('category_list', $category_list)
             ->with('brand_list', $brand_list);
     }
 
-
     public function delete_Cart($rowId)
     {
 
         Cart::update($rowId, 0);
-
 
         $category_list = DB::table('tbl_category_product')
             ->where('category_status', 1)
@@ -62,12 +57,10 @@ class CartController extends Controller
             ->where('brand_status', 1)
             ->get();
 
-
         return view('pages.cart.show_cart')
             ->with('category_list', $category_list)
             ->with('brand_list', $brand_list);
     }
-
 
     public function updata_Cart(Request $request)
     {
@@ -82,5 +75,10 @@ class CartController extends Controller
         return view('pages.cart.show_cart')
             ->with('category_list', $category_list)
             ->with('brand_list', $brand_list);
+    }
+
+    public function addToCartAjax(Request $request)
+    {
+        print_r($request->all());
     }
 }
