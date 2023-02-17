@@ -79,3 +79,15 @@ $(document).ready(function() {
 
 
     get name của option con
+
+
+
+
+
+"require": {
+simplesoftwareio/simple-qrcode": "~2"
+
+
+sau đó, run command
+
+composer update

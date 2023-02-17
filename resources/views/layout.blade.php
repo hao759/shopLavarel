@@ -87,6 +87,7 @@
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -208,6 +209,13 @@ if ($customer_name) {
                     </div>
                 </div>
             </div>
+        </div>
+        <div>
+            {!! QrCode::size(100)->generate('Welcome to kerneldev.com!') !!}
+            {!!
+            QrCode::size(100)->backgroundColor(255,255,255)->generate('https://techvblogs.com/blog/generate-qr-code-laravel-9')
+            !!}
+            {!!QrCode::size(100)->backgroundColor(100,100,100)->phoneNumber('0765795539')!!}
         </div>
         <!--/header-bottom-->
     </header>
