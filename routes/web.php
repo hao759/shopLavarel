@@ -27,9 +27,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/showByDanhMuc/{category_id}', [HomeController::class, 'showByDanhMuc']);
 Route::get('/chi_tiet_san_pham/{product_id}', [HomeController::class, 'showChiTietSanPham']);
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::middleware(['test_middel'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+});
+
+Route::post('/admin_dashboard', [AdminController::class, 'dashboard'])->middleware('test_middel');
+// })->middleware(EnsureTokenIsValid::class);
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
-Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);
 Route::get('/logout1', [AdminController::class, 'logout']);
 Route::get('/sendMail', [HomeController::class, 'sendMail']);
 
