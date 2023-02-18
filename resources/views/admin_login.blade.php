@@ -48,17 +48,24 @@ if ($mess) {
     Session::put('message', null);
 }
 ?>
-            <script>
-            console.log(mess);
-            </script>
+
             <form action="{{URL::to('/admin_dashboard')}}" method="post">
                 @csrf
-                <input type="text" class="ggg" name="admin_email" placeholder="E-MAIL" required="">
+                @if($errors->has('g-recaptcha-response'))
+                <span class="invalid-feedback" style="display:block">
+                    <strong>{{$errors->first('g-recaptcha-response')}}</strong>
+                </span>
+                @endif
+
+                <input type="text" class="ggg" name="admin_email" placeholder="E-MAIL">
                 <input type="password" class="ggg" name="admin_password" placeholder="PASSWORD" required="">
                 <span><input type="checkbox" />Remember Me</span>
                 <h6><a href="#">Forgot Password?</a></h6>
                 <div class="clearfix"></div>
                 <input type="submit" value="Sign In" name="login">
+
+                <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+
             </form>
             <div style="margin-left: 30px;" class="flex items-center justify-end mt-4">
                 <a href="{{ URL::to('/auth/google/redirect')}}">
@@ -76,6 +83,7 @@ if ($mess) {
             <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>
         </div>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="{{asset('public/backend/js/bootstrap.js')}}"></script>
     <script src="{{asset('public/backend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
     <script src="{{asset('public/backend/js/scripts.js')}}"></script>

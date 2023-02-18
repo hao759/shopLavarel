@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\Captcha;
 use DB;
-
 //cho session
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -35,6 +35,12 @@ class AdminController extends Controller
     }
     public function dashboard(Request $request)
     {
+        $data = $request->validate([
+            // 'admin_email' => 'required',
+            // 'admin_password' => 'required',
+            'g-recaptcha-response' => new Captcha(), //dòng kiểm tra Captcha
+        ]);
+
         $admin_email = $request->admin_email;
         $admin_password = $request->admin_password;
         $result = DB::table('tbl_admin')->where('admin_email', $admin_email)
