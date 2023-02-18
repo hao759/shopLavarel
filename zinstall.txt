@@ -5,6 +5,7 @@ php artisan make:controller Admin //tên thôi
 
 php artisan make:migration create_tbl_admin_table --create=tbl_admin
 php artisan make:migration create_tbl_category_product --create=tbl_category_product
+php artisan make:middleware AccessPermission
 
 
 php artisan migrate : tạo table từ migration 
@@ -91,3 +92,8 @@ simplesoftwareio/simple-qrcode": "~2"
 sau đó, run command
 
 composer update
+
+
+
+APP_URL="http://localhost"
+SESSION_DOMAIN=localhost
