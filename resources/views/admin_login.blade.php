@@ -55,6 +55,7 @@ if ($mess) {
                 <span class="invalid-feedback" style="display:block">
                     <strong>{{$errors->first('g-recaptcha-response')}}</strong>
                 </span>
+
                 @endif
 
                 <input type="text" class="ggg" name="admin_email" placeholder="E-MAIL">
